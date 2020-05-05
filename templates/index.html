@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1><font color='660066'>Hello, {{user.username }}!</font></h1>
+<h1><font color='990033'>Welcome to {{name.shopname}}!</font></h1>
+	{% for post in posts %}
+	<div>
+		<p>{{post.author.username}} says: <b>{{post.body}}</b></p>
+	</div>
+	{% endfor %}
+{%endblock%}
