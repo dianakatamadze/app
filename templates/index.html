@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1><font color='660066'>Привет, {{user.username }}!</font></h1>
+<h1><font color='990033'>Добро пожаловать в {{name.shopname}}!</font></h1>
+	
+<h1><font color='660066'>Это сайт где ты сможешь найти сумку мечты!</font></h1>
+<h1><br><a href="{{ url_for('shop_all') }}">Каталог</a>	
+<a href="{{ url_for('contacts') }}">Контакты</a></h1>	
+{% for post in posts %}
+<div>
+		<p>{{post.author.username}} says: <b>{{post.body}}</b></p>
+	</div>
+	{% endfor %}
+{%endblock%}

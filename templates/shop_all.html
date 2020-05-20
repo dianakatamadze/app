@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1><font color='660066'>В данном каталоге находятся все наши товары</font></h1>
+<h1><br><a href="{{ url_for('shop_cross') }}">Сумки через плечо</a>	
+<a href="{{ url_for('shop_bag') }}">Большие сумки</a></h1>
+<h1><a href="{{ url_for('suns') }}"><img src="sun1.jpg" width="300" height="250"alt=""></a></h1>	
+<h1><a href="{{ url_for('suns') }}"><img src="pr.jpg" width="300" height="250"alt=""></a></h1>
+{% for post in posts %}
+<div>
+		<p>{{post.author.username}} says: <b>{{post.body}}</b></p>
+	</div>
+	{% endfor %}
+{%endblock%}
